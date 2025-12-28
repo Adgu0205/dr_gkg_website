@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical Pharma Portfolio Design System - Professional blues and greens with smooth gradients */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 210 20% 98%;
+    --foreground: 210 15% 20%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
+
+    /* Medical Blue Primary (Professional pharmaceutical blue) */
+    --primary: 210 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 85% 55%;
+    --primary-dark: 210 85% 35%;
+
+    /* Medical Green Secondary (Healthcare green) */
+    --secondary: 150 60% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 150 60% 55%;
+    --secondary-dark: 150 60% 35%;
+
+    /* Neutral Tones */
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 200 70% 92%;
+    --accent-foreground: 210 15% 20%;
+
+    /* Status Colors */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 85% 45%;
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Medical Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary-light)) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.35) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+
+    /* Elegant Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(var(--primary) / 0.15);
+    --shadow-hover: 0 12px 40px -12px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.2);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-source;
+  }
+
+  /* Typography System */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer components {
+  /* Medical Portfolio Components */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Globe Animation */
+  .rotating-globe {
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Timeline Animations */
+  .timeline-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: var(--transition-smooth);
+  }
+
+  .timeline-item.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Patent Grid Hover */
+  .patent-tile {
+    transition: var(--transition-spring);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .patent-tile:hover {
+    transform: scale(1.02);
+    z-index: 10;
+  }
+
+  /* Form Focus Animations */
+  .form-input {
+    transition: var(--transition-smooth);
+  }
+
+  .form-input:focus {
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.2);
+    border-color: hsl(var(--primary));
+  }
+}
+
+/* Click Spark effect (adapted from React Bits - Click Spark) */
+.click-spark-particle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  animation: click-spark-move var(--dur) ease-out forwards, click-spark-fade var(--dur) ease-out forwards;
+  z-index: 9999;
+}
+
+.click-spark-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  border: 2px solid currentColor;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  color: hsl(var(--primary));
+  animation: click-spark-ring var(--dur) ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes click-spark-move {
+  from { transform: translate(-50%, -50%) translate(0, 0) scale(1); }
+  to { transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(0.6); }
+}
+
+@keyframes click-spark-fade {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes click-spark-ring {
+  0% { width: 0; height: 0; opacity: 0.6; }
+  100% { width: 36px; height: 36px; opacity: 0; }
+}
